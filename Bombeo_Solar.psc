@@ -1,18 +1,18 @@
 Proceso Bombeo_Solar
-	Definir Tanque, Sensor Como entero;
+	Definir Tanque, Sensor Como Entero;
 	Definir Bomba Como Logico;
-	Escribir "Revise el nivel del tanque (1:Si se encuentra vacio / 0:Si está lleno )";
+	Escribir "Estado del tanque (1: lleno / 0: vacio):";
 	Leer Tanque;
-	Escribir "Por norma de la empresa, la bomba tiene prohibido trabajar de noche,      (1: Es de dia / 0:Es de noche)";
-	Leer Sensor;
-	Si Tanque = 1 Entonces
-		Bomba <-(Sensor = 1);
-	SiNo 
+	Si Tanque = 0 Entonces
+		Escribir "Sensor de noche (1: noche / 0: dia):";
+		Leer Sensor;
+		Bomba <- NO (Sensor = 1);
+	Sino
 		Bomba <- Falso;
 	FinSi
 	Si Bomba Entonces
 		Escribir "Bomba encendida";
-	SiNo
+	Sino
 		Escribir "Bomba apagada";
 	FinSi
 FinProceso
